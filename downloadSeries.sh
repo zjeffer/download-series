@@ -67,7 +67,7 @@ while IFS= read -r line; do
     echo "Downloading ${episode}..."
 
     #download:
-    youtube-dl -f best --postprocessor-args "$postargs" $link -o "${directory}/${filename}.%(ext)s" --no-warnings &
+    youtube-dl -f bestvideo+bestaudio --postprocessor-args "$postargs" $link -o "${directory}/${filename}.%(ext)s" --no-warnings
 done <$file
 
 # this doesn't work properly when using & at the end of the youtube-dl command

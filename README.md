@@ -36,7 +36,7 @@ example syntax to download episode S01E01-S01E03 and put it in the "serieName" f
 If a downloaded video has ads at the beginning and/or end of it, this cuts them out.
 
 ```
-Usage: downloadSeries.sh [-d DIRECTORY] [-f FILE] [-s START] [-e END]
+Usage: cutAds.sh [-d DIRECTORY] [-f FILE] [-s START] [-e END]
 
 -d  directory of .mp4 files
 
