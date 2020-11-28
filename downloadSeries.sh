@@ -67,11 +67,10 @@ while IFS= read -r line; do
     echo "Downloading ${episode}..."
 
     #download:
-    youtube-dl -f bestvideo+bestaudio --postprocessor-args "$postargs" $link -o "${directory}/${filename}.%(ext)s" --no-warnings
+    youtube-dl -f bestvideo+bestaudio --postprocessor-args "$postargs" $link -o "${directory}/${filename}.%(ext)s" --no-warnings &
 done <$file
 
-# this doesn't work properly when using & at the end of the youtube-dl command
-# the & makes the script download everything in parallel instead of serially.
+wait
 endTime=$(date +%s)
 totalTime=$(($endTime-$startTime))
 echo "Finished in $totalTime seconds"
